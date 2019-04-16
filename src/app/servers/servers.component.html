@@ -1,9 +1,8 @@
 <label>Server name</label>
-<!-- forced data binding with event binding and property binding-->
-<input type="text" class="form-control" (input)="onUpdateServerName($event)" [value]="serverName">
+
 <!--data binding with ngModel-->
 <input type="text" class="form-control" [(ngModel)]="serverName">
-<p>{{serverName}}</p>
+<!--<p>{{serverName}}</p>-->
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add server</button>
 <p>{{serverCreationStatus}}</p>
 <ul>
@@ -20,3 +19,9 @@
     <app-server></app-server>
   </li>
 </ul>
+
+
+<label>Username</label>
+<input type="text" class="form-control" [(ngModel)]="username">
+<p>Username is: {{username}}</p>
+<button class="btn btn-primary" [disabled]="!username" (click)="resetUsername()">Reset username</button>
