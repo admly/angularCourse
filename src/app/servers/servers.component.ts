@@ -11,6 +11,9 @@ export class ServersComponent implements OnInit {
   serverName = '';
   username = '';
   serverCreated = false;
+  servers = ['Testserver', 'Testserver 2'];
+  visible: any;
+  clicks = [];
 
   constructor() {
     setTimeout(() => {
@@ -23,6 +26,7 @@ export class ServersComponent implements OnInit {
 
   onCreateServer() {
     this.serverCreated = true;
+    this.servers.push(this.serverName);
     this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
   }
 
@@ -32,5 +36,13 @@ export class ServersComponent implements OnInit {
 
   resetUsername() {
     this.username = '';
+  }
+
+  logClicks(event: MouseEvent) {
+    this.clicks.push(event.timeStamp.toString());
+  }
+
+  getColor() {
+    return this.clicks.length > 5 ? 'green' : '';
   }
 }

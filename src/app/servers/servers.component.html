@@ -11,18 +11,10 @@
   No server was created!
 </p>
 </ng-template>
+
 <ul>
   <li>
-    <app-server></app-server>
-  </li>
-  <li>
-    <app-server></app-server>
-  </li>
-  <li>
-    <app-server></app-server>
-  </li>
-  <li>
-    <app-server></app-server>
+    <app-server *ngFor="let server of servers"></app-server>
   </li>
 </ul>
 
@@ -31,3 +23,10 @@
 <input type="text" class="form-control" [(ngModel)]="username">
 <p>Username is: {{username}}</p>
 <button class="btn btn-primary" [disabled]="!username" (click)="resetUsername()">Reset username</button>
+
+<!--practicing directives-->
+<button class="btn btn-primary" (click)="visible?visible = false : visible=true; logClicks($event)" >
+Display details</button>
+<p *ngIf="visible">spanish inquisition</p>
+
+<p *ngFor="let click of clicks; index as i" [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{online: getColor()==='green'}">{{i}} {{click}}</p>
