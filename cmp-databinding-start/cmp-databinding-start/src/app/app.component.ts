@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,22 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  serverElements = [{type: 'server', name: 'Testserver', content: 'just a test'}];
+  odd: number;
+  even: number;
 
+  evenNumbers: number[] = [];
+  oddNumbers: number[] = [];
 
-  onServerAdded(serverData: {serverName: string, serverContent: string}) {
-    this.serverElements.push({
-      type: 'server',
-      name: serverData.serverName,
-      content: serverData.serverContent,
-    });
+  addEvenNumber(evenNumbers: number[]) {
+    this.evenNumbers = evenNumbers;
   }
 
-  onBlueprintAdded(blueprintData: {serverName: string, serverContent: string}) {
-    this.serverElements.push({
-      type: 'blueprint',
-      name: blueprintData.serverName,
-      content: blueprintData.serverContent,
-    });
+  addODdNumber(oddNumbers: number[]) {
+    this.oddNumbers = oddNumbers;
   }
 }

@@ -1,13 +1,32 @@
+<!--<div class="container">-->
+<!--  <app-cockpit (srvCreated)="onServerAdded($event)"-->
+<!--  (blpCreated)="onBlueprintAdded($event)"-->
+<!--  ></app-cockpit>-->
+<!--  <hr>-->
+<!--  <div class="row">-->
+<!--    <div class="col-xs-12">-->
+<!--      <div>-->
+<!--        <app-server-element *ngFor="let serverElement of serverElements"-->
+<!--        [srvElement]="serverElement"></app-server-element>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--Practicing property and event binding-->
 <div class="container">
-  <app-cockpit (srvCreated)="onServerAdded($event)"
-  (blpCreated)="onBlueprintAdded($event)"
-  ></app-cockpit>
+  <app-game-control (evenNumbers)="addEvenNumber($event)" (oddNumbers)="addODdNumber($event)"></app-game-control>
   <hr>
   <div class="row">
     <div class="col-xs-12">
       <div>
-        <app-server-element *ngFor="let serverElement of serverElements"
-        [srvElement]="serverElement"></app-server-element>
+        <app-odd *ngFor="let odd of oddNumbers" [printNumber]="odd"></app-odd>
+      </div>
+  </div>
+</div>  <div class="row">
+    <div class="col-xs-12">
+      <div>
+       <app-even *ngFor="let even of evenNumbers" [printNumber]="even"></app-even>
     </div>
   </div>
 </div>
