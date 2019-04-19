@@ -1,0 +1,11 @@
+<div
+  class="panel panel-default">
+  <div class="panel-heading">{{ srvElement.name }}</div>
+  <div class="panel-body">
+    <p>
+      <strong *ngIf="srvElement.type === 'server'" style="color: red">{{ srvElement.content }}</strong>
+      <em *ngIf="srvElement.type === 'blueprint'">{{ srvElement.content }}</em>
+    </p>
+  </div>
+</div>
+
