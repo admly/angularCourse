@@ -4,5 +4,5 @@
   </div>
 </div>
 <div class="row">
-  <app-recipe-item *ngFor="let recipe of recipes" [recipeItem]="recipe"></app-recipe-item>
+  <app-recipe-item *ngFor="let recipe of recipes" [recipeItem]="recipe" (recipeNameEmitter)="sendReceivedRecipeItem($event)"></app-recipe-item>
 </div>
