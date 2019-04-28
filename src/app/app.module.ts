@@ -9,7 +9,7 @@ import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { RecipesComponent } from './recipes/recipes.component';
-import { BetterHighlightDirective } from './better-highlight.directive';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { BetterHighlightDirective } from './better-highlight.directive';
     RecipeItemComponent,
     RecipeDetailComponent,
     RecipesComponent,
-    BetterHighlightDirective,
+    DropdownDirective,
   ],
   imports: [
     BrowserModule,
