@@ -1,19 +1,21 @@
-import {resolve} from 'q';
 
 export class AuthService {
   loggedIn = false;
 
   isAuthenticated() {
-    const promise = new Promise(() => {
+
+    console.log('is authenticated');
+    return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(this.loggedIn);
+        console.log('logged in');
       }, 800);
     });
-    return promise;
   }
 
   login() {
     this.loggedIn = true;
+    console.log('login in auth service');
   }
 
   logout() {
