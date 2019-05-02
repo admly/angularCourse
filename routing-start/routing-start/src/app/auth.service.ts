@@ -9,7 +9,7 @@ export class AuthService {
       setTimeout(() => {
         resolve(this.loggedIn);
         console.log('logged in');
-      }, 800);
+      }, 80);
     });
   }
 
