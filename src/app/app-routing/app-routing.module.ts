@@ -3,7 +3,8 @@ import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {RecipesComponent} from '../recipes/recipes.component';
 import {ShoppingListComponent} from '../shopping/shopping-list/shopping-list.component';
-import {RecipeItemComponent} from '../recipes/recipe-list/recipe-item/recipe-item.component';
+import {RecipeStartComponent} from '../recipes/recipe-start/recipe-start.component';
+import {RecipeDetailComponent} from '../recipes/recipe-detail/recipe-detail.component';
 
 const appRoutes = [
   {
@@ -11,11 +12,14 @@ const appRoutes = [
   },
   {
     path: 'recipes', component: RecipesComponent,
-    // children: [
-    //   {
-    //     path: ':id', component: RecipeItemComponent
-    //   }
-    // ]
+    children: [
+      {
+        path: '', component: RecipeStartComponent
+      },
+      {
+        path: ':id', component: RecipeDetailComponent
+      }
+    ]
   },
   {
     path: 'shopping-list', component: ShoppingListComponent
@@ -26,7 +30,7 @@ const appRoutes = [
   declarations: [
   ],
   imports: [
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes,  { enableTracing: true } ),
     CommonModule
   ],
   exports: [ RouterModule]

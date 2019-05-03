@@ -10,10 +10,9 @@ import {ActivatedRoute, ActivatedRouteSnapshot} from '@angular/router';
 })
 export class RecipeItemComponent implements OnInit {
   @Input() recipeItem: Recipe;
-  constructor(private recipeService: RecipeService, private route: ActivatedRoute) { }
+  constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
-    // this.route.params.subscribe(() => )
   }
 
   emitRecipeName(name: Recipe) {
