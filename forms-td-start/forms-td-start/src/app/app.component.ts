@@ -10,6 +10,8 @@ export class AppComponent {
   @ViewChild('f') singupForm: NgForm;
   defaultQuestion = 'pet';
   answer: any;
+  genders = ['male', 'female'];
+
   suggestUserName() {
     const suggestedName = 'Superuser';
   }
