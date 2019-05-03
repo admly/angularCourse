@@ -49,5 +49,6 @@ export class AppComponent {
     this.user.gender = this.singupForm.value.gender;
     this.submitted = true;
     console.log(this.singupForm);
+    this.singupForm.reset();
   }
 }
