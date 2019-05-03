@@ -14,7 +14,7 @@
       <button type="button" class="btn btn-primary dropdown-toggle">Manage recipe<span class="caret"></span></button>
       <ul class="dropdown-menu">
         <li><a style="cursor: pointer" (click)="sendIngredientsToShoppingList(receivedRecipe.ingredients)">To shopping list</a>
-        <li><a style="cursor: pointer">Edit recipe</a>
+        <li><a style="cursor: pointer" (click)="redirectToEditRecipe(receivedRecipe?.id)">Edit recipe</a>
         <li><a style="cursor: pointer">Delete recipe</a>
         </li>
       </ul>

@@ -37,7 +37,7 @@ const appRoutes = [
   declarations: [
   ],
   imports: [
-    RouterModule.forRoot(appRoutes,  { enableTracing: true } ),
+    RouterModule.forRoot(appRoutes),
     CommonModule
   ],
   exports: [ RouterModule]
