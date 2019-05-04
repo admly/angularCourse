@@ -31,7 +31,7 @@ export class RecipeService {
     this._recipes = value;
   }
 
-  getRecipesById(id: number): Recipe {
+  getRecipeById(id: number): Recipe {
     return this._recipes.filter(x => x.id === id)[0];
   }
 }
