@@ -1,7 +1,10 @@
 import {Recipe} from './model/recipe.model';
 import {Ingredient} from '../shared/ingredient.model';
+import {Subject} from 'rxjs';
 
 export class RecipeService {
+
+  recipesChanged = new Subject<Recipe[]>();
 
   constructor() {
   }
@@ -33,5 +36,17 @@ export class RecipeService {
 
   getRecipeById(id: number): Recipe {
     return this._recipes.filter(x => x.id === id)[0];
+  }
+
+  addRecipe(recipe: Recipe) {
+    recipe.id = Math.max.apply(Math, this._recipes.map(o => o.id)) + 1;
+    this._recipes.push(recipe);
+    this.recipesChanged.next(this._recipes.slice());
+  }
+
+  updateRecipe(index: number, newRecipe: Recipe) {
+    newRecipe.id = index;
+    this._recipes[index] = newRecipe;
+    this.recipesChanged.next(this._recipes.slice());
   }
 }
